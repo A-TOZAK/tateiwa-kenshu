@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ja"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GASでスライドを量産する｜立岩小 校内研修</title>
+<meta name="description" content="スプレッドシートに言葉を並べて、フラッシュカードのスライドを自動生成。コピペで動くGoogle Apps Scriptのコード付き。">
+<script>document.documentElement.className += ' js';</script>
+<link rel="stylesheet" href="../styles.css">
+</head><body>
+<header class="bar"><div class="wrap">
+  <div class="brand">LiFE with<span class="with">資料庫</span></div>
+  <a class="back" href="../">← 研修トップへ</a>
+</div></header>
+
+<div class="page-hero"><div class="wrap reveal">
+  <div class="crumb"><a href="../">研修トップ</a> ／ 資料庫 ／ GASで量産</div>
+  <div class="kick">Google Apps Script</div>
+  <h1>GASでスライドを量産する</h1>
+  <p class="intro">「同じ形のスライドをたくさん」は、手で作る仕事ではありません。スプレッドシートに言葉を並べれば、スライドは自動でできます。プログラミングの知識は不要、<b>コピペで動きます</b>。</p>
+</div></div>
+
+<section><div class="wrap reveal">
+  <div class="eyebrow">What for</div>
+  <h2>なにが作れるか</h2>
+  <ul class="uses">
+    <li>漢字・英単語・九九のフラッシュカード（1語1枚・でか文字）</li>
+    <li>音読カード・都道府県カードなど、暗記もの全般</li>
+    <li>名簿から1人1枚の賞状・係カード・めあてカード</li>
+  </ul>
+  <div class="tip"><b>目安：</b>漢字50語のフラッシュカードを手で作ると1時間仕事。この方法なら、シートに打つ10分＋実行1分です。浮いた50分は2学期のゆとりにどうぞ。</div>
+</div></section>
+
+<section class="band"><div class="wrap reveal">
+  <div class="eyebrow">Recipe 1</div>
+  <h2>フラッシュカードを自動で作る</h2>
+  <ol class="steps">
+    <li>スプレッドシートを新規作成。<b>A列に出す言葉、B列に読みや答え</b>（B列は空でもOK）を並べる</li>
+    <li>メニューの <b>拡張機能 → Apps Script</b> を開く</li>
+    <li>最初から入っている数行を全部消して、下のコードを貼り付ける</li>
+    <li>上の <b>実行（▶）</b>を押す。初回だけ「承認が必要です」と出るので、自分のアカウントを選んで許可する（自分で貼ったスクリプトを自分に許可する画面です）</li>
+    <li>ドライブに「（シート名）フラッシュカード」というスライドができています</li>
+  </ol>
+  <div class="prompt">
+    <div class="ph"><span>コード（全部コピーして貼り付け）</span><button class="copy" data-copy>コピー</button></div>
+    <pre>function makeFlashcards() {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  const rows = sheet.getDataRange().getValues();
+  const deck = SlidesApp.create(sheet.getName() + ' フラッシュカード');
+  deck.getSlides()[0].remove(); // 最初の空スライドを消す
+
+  rows.forEach(function(row) {
+    const omote = String(row[0] || '').trim(); // A列＝出す言葉
+    const ura   = String(row[1] || '').trim(); // B列＝読み・答え
+    if (!omote) return;
+    addCard(deck, omote);
+    if (ura) addCard(deck, ura);
+  });
+}
+
+function addCard(deck, word) {
+  const slide = deck.appendSlide(SlidesApp.PredefinedLayout.BLANK);
+  const box = slide.insertTextBox(word, 0, 0, 720, 405); // 画面いっぱいの箱
+  box.getText().getTextStyle()
+     .setFontSize(word.length > 6 ? 90 : 140) // 長い言葉は少し小さく
+     .setBold(true);
+  box.getText().getParagraphs().forEach(function(p) {
+    p.getRange().getParagraphStyle()
+     .setParagraphAlignment(SlidesApp.ParagraphAlignment.CENTER);
+  });
+  box.setContentAlignment(SlidesApp.ContentAlignment.MIDDLE);
+}</pre>
+  </div>
+  <div class="tip"><b>しくみ：</b>A列の言葉→B列の答え→次の行、の順にスライドが並びます。「漢字→読み」「英単語→意味」「6×7→42」。シートを差し替えれば何度でも使えて、学年の先生にシートごと渡せます。</div>
+</div></section>
+
+<section><div class="wrap reveal">
+  <div class="eyebrow">Recipe 2</div>
+  <h2>名簿から賞状・カードを1人1枚つくる</h2>
+  <p class="lead">賞状のテンプレスライドを1枚作り、名前の場所に <b>{{名前}}</b> と打っておきます。あとは名簿のシートからこのコードを実行すると、全員分のページができます。</p>
+  <ol class="steps">
+    <li>Googleスライドで賞状を1枚デザインし、名前の位置に <b>{{名前}}</b> と書く</li>
+    <li>そのスライドのURLの <b>/d/ と /edit の間の長い文字列（ID）</b>をコピーする</li>
+    <li>名簿のスプレッドシート（A2から下に名前）で 拡張機能 → Apps Script を開き、下のコードのIDを差し替えて実行</li>
+  </ol>
+  <div class="prompt">
+    <div class="ph"><span>コード（IDを1か所差し替え）</span><button class="copy" data-copy>コピー</button></div>
+    <pre>function makeCertificates() {
+  const TEMPLATE_ID = 'ここにテンプレのスライドIDを貼る';
+  const names = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet()
+    .getRange('A2:A').getValues().flat().filter(String);
+
+  const copy = DriveApp.getFileById(TEMPLATE_ID).makeCopy('賞状（全員分）');
+  const deck = SlidesApp.openById(copy.getId());
+  const master = deck.getSlides()[0];
+
+  names.forEach(function(name) {
+    master.duplicate().replaceAllText('{{名前}}', name);
+  });
+  master.remove(); // ひな形のページを消す
+}</pre>
+  </div>
+  <div class="tip"><b>応用：</b>{{名前}} 以外にも {{がんばったこと}} {{日づけ}} など、列を増やせば差しこむ言葉を増やせます。まずは名前だけで1回動かしてから広げるのがおすすめです。</div>
+</div></section>
+
+<section class="band"><div class="wrap reveal">
+  <div class="eyebrow">Notes</div>
+  <h2>つまずきやすいところ</h2>
+  <div class="qa">
+    <div class="row"><div class="q">「拡張機能」にApps Scriptが出てきません。</div><div class="a">学校アカウントの設定で止められている場合があります。その場合は無理をせず、情報担当かICT支援員さんに「Apps Scriptは使えますか」と聞いてください。個人の研究用アカウントで試す手もあります。</div></div>
+    <div class="row"><div class="q">初回の承認画面がこわいです。</div><div class="a">「このアプリは確認されていません」という画面は、自分で貼ったスクリプトに自分が許可を出すときの定型の画面です。作った本人が実行する分には進めて大丈夫です（学校のICT利用ルールがある場合はそちらに従ってください）。</div></div>
+    <div class="row"><div class="q">エラーで止まりました。</div><div class="a">いちばん多いのはコードの貼り忘れ（一部だけ貼る）です。いったん全部消して、全部貼り直してください。それでも動かなければ、エラー文をそのまま公式LINEに送ってもらえれば見ます。</div></div>
+  </div>
+  <p class="lead" style="font-size:14.5px; margin-top:22px">もっと知りたい先生へ：<a href="https://qiita.com/Shuni/items/c698afaceef36e259698" target="_blank" rel="noopener">語学フラッシュカードをGASで一括生成する記事 ↗</a>、<a href="https://note.com/giga_koumu/n/n87dddfe11b76" target="_blank" rel="noopener">校務でのGAS×スライド活用の記事 ↗</a> あたりが次の一歩に手ごろです。</p>
+  <div class="pager"><a href="donyu.html">← 教科別・導入のアイデア</a><a href="notebooklm.html">NotebookLMで下書き →</a></div>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="foot-base">
+    <div><span class="lw">LiFE with</span>　ゆとりをもって人を育てる社会をつくる</div>
+    <div>© 2026 外﨑顯博</div>
+  </div>
+</div></footer>
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }),{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+document.querySelectorAll('[data-copy]').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const pre=btn.closest('.prompt').querySelector('pre');
+    navigator.clipboard.writeText(pre.textContent).then(()=>{
+      btn.textContent='コピーしました'; btn.classList.add('done');
+      setTimeout(()=>{btn.textContent='コピー'; btn.classList.remove('done');},1800);
+    });
+  });
+});
+</script>
+</body></html>
