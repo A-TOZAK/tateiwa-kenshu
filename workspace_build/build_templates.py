@@ -70,7 +70,7 @@ def rect(s, x, y, w, h, fill, line=None):
     return sh
 
 
-def photo_slot(s, x, y, w, h, note="ここに 写真を 1まい\n（この四角を消して、画像をドラッグ）"):
+def photo_slot(s, x, y, w, h, note="ここに 写真を 1まい\n（この四角を消して 画像をドラッグ）"):
     r = rect(s, x, y, w, h, WASH, line=SUB)
     tf = r.text_frame
     tf.word_wrap = True
@@ -101,7 +101,7 @@ notes(s, "表紙。単元名と学年だけ。ここで長く話さず、次の�
 
 s = blank(p, NAVY)
 photo_slot(s, 0.9, 0.7, 7.6, 6.1)
-box(s, 8.9, 2.6, 3.6, 2.5, "気づいたこと、\nある？", 40, PAPER)
+box(s, 8.9, 2.6, 3.6, 2.5, "気づいたこと\nある？", 40, PAPER)
 notes(s, "この1枚が導入の主役。しゃべらず10秒待つ→ペアで30秒→全体で拾う。写真は自分で撮った1枚がいちばん食いつきます。")
 
 s = blank(p, PAPER)
@@ -134,19 +134,19 @@ p.save(os.path.join(OUT, "t1_shashin_don.pptx"))
 p = deck()
 
 s = blank(p, PAPER)
-box(s, 1.0, 2.4, 11.3, 1.5, "2学期、はじめます。", 54, INK)
+box(s, 1.0, 2.4, 11.3, 1.5, "2学期 はじめます", 54, INK)
 box(s, 1.0, 4.1, 11.3, 0.8, "【○年○組】", 26, SUB, bold=False)
 notes(s, "表紙。始業式の日の学活の1枚目。元気な声でどうぞ。")
 
 s = blank(p, PAPER)
 photo_slot(s, 0.9, 0.7, 7.6, 6.1, "ここに 夏の写真を 1まい\n（学校・行事・空 なんでも）")
-box(s, 8.9, 2.8, 3.6, 2.2, "おかえり\nなさい。", 40, INK)
+box(s, 8.9, 2.8, 3.6, 2.2, "おかえり\nなさい", 40, INK)
 notes(s, "夏の1枚で空気をあたためる。子どもの夏の話を2〜3人分ひろってから、次へ。")
 
 for i, (rule, why) in enumerate([
-    ("【ルール 1 を ここに】", "れい：チャイムの前に、すわる。"),
-    ("【ルール 2 を ここに】", "れい：話している人の ほうを 見る。"),
-    ("【ルール 3 を ここに】", "れい：タブレットは 先生の あいずで。"),
+    ("【ルール 1 を ここに】", "れい：チャイムの前に すわる"),
+    ("【ルール 2 を ここに】", "れい：話している人の ほうを 見る"),
+    ("【ルール 3 を ここに】", "れい：タブレットは 先生の あいずで"),
 ]):
     s = blank(p, PAPER)
     box(s, 0.7, 1.6, 3.2, 4.2, str(i + 1), 170, BLUE, align=PP_ALIGN.CENTER)
@@ -157,7 +157,7 @@ for i, (rule, why) in enumerate([
     notes(s, "1枚に1ルール。出したら読み上げず、子どもに読ませる→「なんで あるんだっけ？」を1人に聞く。")
 
 s = blank(p, PAPER)
-box(s, 1.0, 2.7, 11.3, 1.6, "なんで、この3つ なんだっけ？", 42, INK, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+box(s, 1.0, 2.7, 11.3, 1.6, "なんで この3つ なんだっけ？", 42, INK, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
 box(s, 1.0, 4.6, 11.3, 0.7, "ペアで 30びょう", 20, SUB, bold=False, align=PP_ALIGN.CENTER)
 notes(s, "ルールの意味を子どもの言葉で言わせる1枚。ここが「提示」と「押しつけ」の分かれ目です。")
 
@@ -198,7 +198,7 @@ notes(s, "時間とゴールをセットで。「あと何分？」「どこま�
 
 s = blank(p, PAPER)
 box(s, 1.0, 0.8, 11.3, 1.0, "ペア・グループの うごき", 28, SUB)
-for i, t in enumerate(["つくえを あわせる", "きく人は、あいての ほうを 見る", "おわったら、手を あげる"]):
+for i, t in enumerate(["つくえを あわせる", "きく人は あいての ほうを 見る", "おわったら 手を あげる"]):
     y = 2.0 + i * 1.5
     rect(s, 1.0, y, 11.3, 1.15, WASH)
     box(s, 1.35, y + 0.12, 0.9, 0.9, str(i + 1), 32, BLUE)
@@ -207,7 +207,7 @@ notes(s, "グループ活動の約束は毎回同じ文言で。同じスライ�
 
 s = blank(p, PAPER)
 box(s, 1.0, 2.4, 11.3, 1.4, "かたづけ → ふりかえり", 40, INK, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-box(s, 1.0, 4.2, 11.3, 1.2, "きょうの「なるほど」を 1つ、ノートに。", 24, SUB, bold=False, align=PP_ALIGN.CENTER)
+box(s, 1.0, 4.2, 11.3, 1.2, "きょうの「なるほど」を 1つ ノートに", 24, SUB, bold=False, align=PP_ALIGN.CENTER)
 notes(s, "終末の定型。この1枚が出たら片づけ、が習慣になると授業の終わりが崩れません。")
 
 p.save(os.path.join(OUT, "t3_jugyo_nagare.pptx"))
@@ -216,7 +216,7 @@ p.save(os.path.join(OUT, "t3_jugyo_nagare.pptx"))
 p = deck()
 
 s = blank(p, NAVY)
-box(s, 1.0, 2.7, 11.3, 1.5, "クイズで はじめます。", 50, PAPER, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+box(s, 1.0, 2.7, 11.3, 1.5, "クイズで はじめます", 50, PAPER, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
 box(s, 1.0, 4.5, 11.3, 0.7, "【単元名 ・ 教科】", 22, LIGHT, bold=False, align=PP_ALIGN.CENTER)
 notes(s, "表紙。導入でも、朝の会の1問でも。")
 
@@ -245,7 +245,7 @@ quiz_q(p, 1, "【問題文を ここに】")
 quiz_q(p, 2, "【問題文を ここに】")
 
 s = blank(p, NAVY)
-box(s, 1.0, 2.7, 11.3, 1.5, "つづきは、この単元で。", 44, PAPER, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+box(s, 1.0, 2.7, 11.3, 1.5, "つづきは この単元で", 44, PAPER, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
 notes(s, "クイズの「もっと知りたい」を単元のめあてに接続して閉じます。")
 
 p.save(os.path.join(OUT, "t4_quiz_donyu.pptx"))
