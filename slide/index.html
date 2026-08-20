@@ -49,13 +49,14 @@ h1.accent{color:var(--accent)}
 .door .n{font-family:var(--font-en); font-size:340px; line-height:.8; color:var(--accent); font-weight:700}
 .door .t h1{font-size:110px}
 .door .t .sub{margin-top:26px}
+.lhead{position:absolute; left:220px; top:150px; font-size:46px; font-weight:800; color:var(--accent)}
 
 .three{position:absolute; left:120px; right:120px; top:0; bottom:0; display:flex;
   align-items:center; justify-content:center; gap:56px}
 .three .c{flex:1; text-align:center}
 .three .c .k{font-family:var(--font-en); font-size:44px; color:var(--accent); font-weight:700;
   letter-spacing:.1em; margin-bottom:26px}
-.three .c h2{font-size:66px; font-weight:800; line-height:1.3}
+.three .c h2{font-size:54px; font-weight:800; line-height:1.3; white-space:nowrap}
 .three .c p{font-size:29px; color:var(--sub); font-weight:700; margin-top:22px; line-height:1.6}
 .three .c .rbox{margin:0 auto 26px; border:6px solid var(--accent); background:#eef2fd;
   display:flex; align-items:center; justify-content:center; font-family:var(--font-en);
@@ -97,8 +98,11 @@ h1.accent{color:var(--accent)}
 #qrov.on{display:flex}
 #qrov img{width:min(62vh,62vw); background:#fff; padding:24px; border-radius:8px}
 #qrov .u{font-family:"SF Mono",Menlo,monospace; font-size:min(3.4vh,28px); color:#fff}
-#qrbtn{position:fixed; right:16px; top:14px; z-index:95; font-size:13px; font-weight:800;
-  color:#fff; background:var(--accent); border:none; border-radius:6px; padding:8px 16px; cursor:pointer; opacity:.85}
+#ctrl{position:fixed; right:16px; top:14px; z-index:95; display:flex; gap:8px}
+#ctrl .cb{font-family:var(--font-ja); font-size:13px; font-weight:800; color:#fff; background:var(--accent);
+  border:none; border-radius:6px; padding:8px 16px; cursor:pointer; opacity:.85; text-decoration:none; display:inline-block}
+#ctrl .cb.ghost{background:#3a3f47}
+#ctrl .cb:hover{opacity:1}
 
 #grid{position:fixed; inset:0; background:#efeeea; z-index:80; display:none; overflow:auto; padding:34px}
 #grid.on{display:block}
@@ -132,7 +136,8 @@ h1.accent{color:var(--accent)}
   <div class="cover-l">
     <div class="rule"></div>
     <div class="kicker">令和8年度　立岩小学校　校内研修</div>
-    <h1>AIには<br><span class="a">人に頼むように</span></h1>
+    <h1>画像生成の<span class="a">コツ</span></h1>
+    <div class="sub" style="font-size:30px; color:#6d727a">AIをうまく使いこなすために</div>
     <div class="meta">
       <b>2026年8月24日（月）</b>60分<br>
       <b>担当</b>外﨑顯博（飯塚市立菰田小学校）
@@ -152,13 +157,13 @@ h1.accent{color:var(--accent)}
 <!-- 3 ゴール -->
 <section class="slide" data-step="終わったときの姿">
   <div class="tag">はじめに<span>0 – 5 min</span></div>
-  <div class="list" style="gap:52px">
-    <div class="li">・<b>画像生成</b>を自分の手で経験している</div>
-    <div class="li">・<b>Gemini Notebook</b>で資料をやさしくまとめられる</div>
-    <div class="li">・スライドの<b>見た目のルール</b>がちょっと分かる</div>
-    <div class="li">・<b>学級開き</b>で「こんなことしよう」が1つ浮かんでいる</div>
+  <div class="lhead">研修が終わったときの姿</div>
+  <div class="list" style="gap:48px; padding-top:90px">
+    <div class="li" style="font-size:54px">・<b>画像生成</b>を自分の手で経験している</div>
+    <div class="li" style="font-size:54px">・<b>Gemini Notebook</b>で資料をやさしくまとめられる</div>
+    <div class="li" style="font-size:54px">・スライドの<b>見た目のルール</b>がちょっと分かる</div>
+    <div class="li" style="font-size:54px">・<b>学級開き</b>で「こんなことしよう」が1つ浮かんでいる</div>
   </div>
-  <div class="bottomline">研修が終わったときの姿</div>
 </section>
 
 <!-- 4 第1部扉 -->
@@ -175,16 +180,16 @@ h1.accent{color:var(--accent)}
   <div class="tag">第1部　実践例<span>5 – 20 min</span></div>
   <div class="mid">
     <h1>AIの画像生成は<br><span class="a">まだ不十分</span></h1>
-    <div class="sub">あえてそこを授業で使う</div>
+    <div class="sub">だから あえてそこを授業で使う</div>
   </div>
 </section>
 
 <!-- 6 避難所 -->
 <section class="slide" data-step="避難所の絵">
   <div class="tag">4年社会「水害からくらしを守る」<span>5 – 20 min</span></div>
-  <div class="pic"><img src="img/hinanjo.png" alt="設備の足りない避難所のイラスト"></div>
-  <div class="pic-r">
-    <h1>この絵<br>へんなところは<br>ない？</h1>
+  <div class="pic" style="width:50%; left:110px; top:150px; bottom:150px"><img src="img/hinanjo.png" alt="設備の足りない避難所のイラスト"></div>
+  <div class="pic-r" style="width:30%; right:150px">
+    <h1 style="font-size:64px">この絵<br>へんなところは<br>ない？</h1>
     <div class="sub">10点満点なら何点？</div>
   </div>
   <a class="jump" href="../#gazo" target="_blank" rel="noopener">くわしくはサイトへ →</a>
@@ -195,7 +200,7 @@ h1.accent{color:var(--accent)}
   <div class="tag">第1部　実践例<span>5 – 20 min</span></div>
   <div class="mid">
     <h1>渡した資料の中だけから<br>答えるAI</h1>
-    <div class="sub">Gemini Notebook　—　体育の準備でやってみます</div>
+    <div class="sub">Gemini Notebook　—　例えば体育の準備でやってみます</div>
   </div>
 </section>
 
@@ -235,7 +240,7 @@ h1.accent{color:var(--accent)}
   <div class="tag">第2部　触る時間<span>25 – 50 min</span></div>
   <div class="door">
     <div class="n">2</div>
-    <div class="t"><h1>つぎは 自分の手</h1><div class="sub">手順とプロンプトはサイトにあります</div></div>
+    <div class="t"><h1>実際に<br>試してみましょう</h1><div class="sub">手順とプロンプトはサイトにあります</div></div>
   </div>
 </section>
 
@@ -247,7 +252,7 @@ h1.accent{color:var(--accent)}
     <div class="c"><div class="k">B</div><h2>授業の<br>導入スライド</h2><p>画像を16:9で生成して<br>画像1枚＋問い1つ</p></div>
     <div class="c"><div class="k">C</div><h2>難しい資料を<br>やさしく</h2><p>Gemini Notebookに渡して<br>相手に届く言葉に</p></div>
   </div>
-  <div class="bottomline">選ぶのはひとつだけ</div>
+  <div class="bottomline">どれか1つ選んでみてください</div>
   <a class="jump" href="../#handson" target="_blank" rel="noopener">手順はサイトへ →</a>
 </section>
 
@@ -278,8 +283,18 @@ h1.accent{color:var(--accent)}
   <div class="tag">見せ合い・まとめ<span>50 – 60 min</span></div>
   <div class="mid">
     <h1>今日できたものを<br>見せ合ってください</h1>
-    <div class="sub">見た人はひとこと　「これで子どもは何を考えると思う？」</div>
+    <div class="sub">見た人はひとこと　「これで子どもは何を考えると思う？」<br>発表もしてもらえると助かります</div>
   </div>
+</section>
+
+<!-- 15.5 スライドづくり資料 -->
+<section class="slide" data-step="スライドづくりの話もサイトに">
+  <div class="tag">おまけ<span>50 – 60 min</span></div>
+  <div class="mid left">
+    <h1>スライドづくりの話も<br>サイトにあります</h1>
+    <div class="sub">見た目の大原則5つ　／　見くらべる例　／　差し替えるだけのテンプレpptx</div>
+  </div>
+  <a class="jump" href="../slides/" target="_blank" rel="noopener">資料編を開く →</a>
 </section>
 
 <!-- 16 アンケート -->
@@ -307,7 +322,11 @@ h1.accent{color:var(--accent)}
 </div>
 
 <div id="grid"><div class="gg"></div></div>
-<button id="qrbtn">QR</button>
+<div id="ctrl">
+  <button class="cb" id="listbtn">一覧</button>
+  <button class="cb" id="qrbtn">QR</button>
+  <a class="cb ghost" href="../">サイトに戻る</a>
+</div>
 <div id="qrov"><img src="../qr/tateiwa_qr.png" alt="研修サイトのQR"><div class="u">a-tozak.github.io/tateiwa-kenshu</div></div>
 <div id="help"><b>→ / ←</b> 送る・戻る　<b>F</b> 全画面　<b>O</b> 一覧　<b>Q</b> サイトQR</div>
 
@@ -330,6 +349,8 @@ h1.accent{color:var(--accent)}
   var qrov=document.getElementById('qrov');
   function qr(on){qrov.classList.toggle('on',on)}
   document.getElementById('qrbtn').addEventListener('click',function(e){e.stopPropagation();qr(true)});
+  document.getElementById('listbtn').addEventListener('click',function(e){e.stopPropagation();
+    grid(!document.getElementById('grid').classList.contains('on'))});
   qrov.addEventListener('click',function(){qr(false)});
   var stage=document.getElementById('stage');
   function fit(){var s=Math.min(innerWidth/1920,innerHeight/1080);
@@ -345,7 +366,7 @@ h1.accent{color:var(--accent)}
     else if(k==='f'||k==='F'){document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen()}
   });
   addEventListener('click',function(e){
-    if(e.target.closest('.jump')||e.target.closest('#qrbtn'))return;
+    if(e.target.closest('.jump')||e.target.closest('#ctrl'))return;
     if(qrov.classList.contains('on'))return;
     if(document.getElementById('grid').classList.contains('on'))return;
     (e.clientX<innerWidth*0.18)?show(cur-1):show(cur+1);
