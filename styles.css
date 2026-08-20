@@ -244,3 +244,53 @@ footer{border-top:1px solid var(--line); padding:44px 0 30px; font-size:13px; co
 /* SVG共通 */
 .d-label{font-family:var(--font-ja); font-weight:700}
 .d-mono{font-family:var(--font-en)}
+
+/* ロゴ・バー右の道具（2026-08-21） */
+.brand-logo{display:flex; align-items:center; gap:10px; text-decoration:none}
+.brand-logo:hover{text-decoration:none}
+.brand-logo img{height:34px; width:auto; display:block}
+.brand-logo .with{font-family:var(--font-en); font-style:italic; color:var(--moss); font-size:14px}
+.bar-tools{display:flex; align-items:center; gap:10px}
+.qr-btn{font-family:var(--font-ja); font-weight:800; font-size:12.5px; color:#fff; background:var(--accent);
+  border:none; border-radius:6px; padding:7px 14px; cursor:pointer}
+.qr-btn:hover{background:#2450be}
+.burger{display:none; width:40px; height:40px; border:1px solid var(--line); background:var(--paper);
+  border-radius:6px; cursor:pointer; position:relative}
+.burger span{position:absolute; left:9px; right:9px; height:2px; background:var(--ink); transition:.2s}
+.burger span:nth-child(1){top:12px}
+.burger span:nth-child(2){top:19px}
+.burger span:nth-child(3){top:26px}
+.burger.open span:nth-child(1){top:19px; transform:rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){top:19px; transform:rotate(-45deg)}
+@media(max-width:760px){ .burger{display:block} }
+
+/* モバイルメニュー */
+#mmenu{display:none; position:fixed; top:56px; left:0; right:0; z-index:49; background:var(--paper);
+  border-bottom:1px solid var(--line); box-shadow:0 12px 24px rgba(0,0,0,.08)}
+#mmenu.on{display:block}
+#mmenu a{display:block; padding:14px 24px; border-top:1px dotted var(--line); color:var(--ink);
+  font-weight:700; font-size:15px}
+#mmenu a:hover{text-decoration:none; background:var(--wash)}
+
+/* QRワンタッチ表示 */
+#qrov{position:fixed; inset:0; z-index:99; background:rgba(14,15,17,.94); display:none;
+  align-items:center; justify-content:center; flex-direction:column; gap:22px; cursor:pointer; padding:24px}
+#qrov.on{display:flex}
+#qrov img{width:min(64vh,80vw); background:#fff; padding:20px; border-radius:8px}
+#qrov .u{font-family:var(--font-mono); font-size:15px; color:#fff}
+#qrov .c{font-size:13px; color:#9aa0a8}
+
+/* トップに戻る */
+#totop{position:fixed; right:18px; bottom:18px; z-index:48; width:46px; height:46px; border-radius:50%;
+  background:var(--accent); color:#fff; border:none; font-size:20px; font-weight:800; cursor:pointer;
+  box-shadow:0 6px 16px rgba(43,95,217,.35); opacity:0; pointer-events:none; transition:opacity .25s}
+#totop.show{opacity:1; pointer-events:auto}
+#totop:hover{background:#2450be}
+
+/* AIを開くボタン（プロンプト帳） */
+.open-ai{font-weight:800; font-size:12px; color:#fff; background:var(--accent); border-radius:4px;
+  padding:4px 10px; white-space:nowrap}
+.open-ai:hover{text-decoration:none; background:#2450be}
+.prompt .ph .tools{display:flex; gap:8px; align-items:center}
+.launch-row{display:flex; gap:12px; flex-wrap:wrap; margin-top:16px}

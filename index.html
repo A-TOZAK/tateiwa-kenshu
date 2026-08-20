@@ -13,7 +13,7 @@
 <!-- ===== top bar ===== -->
 <header class="bar">
   <div class="wrap">
-    <div class="brand">LiFE with<span class="with">研修</span></div>
+    <a class="brand-logo" href="./" aria-label="このサイトのトップへ"><img src="assets/logo.png" alt="LiFE with"><span class="with">研修</span></a>
     <nav class="nav">
       <a href="#flow">見取り図</a>
       <a href="#tanomikata">頼み方</a>
@@ -21,10 +21,35 @@
       <a href="#notebooklm">Gemini Notebook</a>
       <a href="#handson">つくる</a>
       <a href="#prompt">プロンプト帳</a>
+      <a href="slide/" target="_blank" rel="noopener">スライド</a>
       <a href="#shiryo">資料庫</a>
     </nav>
+    <div class="bar-tools">
+      <button class="qr-btn" id="qrbtn">QR</button>
+      <button class="burger" id="menubtn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
   </div>
 </header>
+
+<nav id="mmenu" aria-label="メニュー">
+  <a href="#flow">見取り図</a>
+  <a href="#tanomikata">頼み方</a>
+  <a href="#gazo">画像生成</a>
+  <a href="#notebooklm">Gemini Notebook</a>
+  <a href="#handson">つくる（触る時間）</a>
+  <a href="#prompt">プロンプト帳</a>
+  <a href="slide/" target="_blank" rel="noopener">投影スライド</a>
+  <a href="#shiryo">あとから読む資料庫</a>
+  <a href="#connect">相談先・アンケート</a>
+</nav>
+
+<div id="qrov" role="dialog" aria-label="研修サイトのQRコード">
+  <img src="qr/tateiwa_qr.png" alt="研修サイトのQRコード">
+  <div class="u">a-tozak.github.io/tateiwa-kenshu</div>
+  <div class="c">タップで閉じる</div>
+</div>
+
+<button id="totop" aria-label="ページの先頭へ">↑</button>
 
 <!-- ===== hero ===== -->
 <div class="hero">
@@ -281,6 +306,10 @@
     <div class="eyebrow">Hands-on</div>
     <h2>触る時間</h2>
     <p class="lead">ここから25分。3つの題材から1つ選んでください。どれも<a href="#prompt">プロンプト帳</a>の文をコピーして（またはしゃべって）始められます。見て終わる研修にはしません。</p>
+    <div class="launch-row">
+      <a class="btn primary" href="https://gemini.google.com" target="_blank" rel="noopener">Geminiを開く ↗</a>
+      <a class="btn" href="https://notebooklm.google.com" target="_blank" rel="noopener">Gemini Notebookを開く ↗</a>
+    </div>
 
     <div class="menu">
       <div class="head"><span class="badge">A</span><h3>学級開きのスライド</h3><span class="lv">2学期の初日に</span></div>
@@ -340,7 +369,7 @@
     <p class="lead">コピーしてそのまま使えます。【　】の中だけ、自分の教室の言葉に差し替えてください。<b>全部しゃべって伝えても構いません。</b>そもそもプロンプトとは、AIへの頼みごとの文のことです。何を頼めばいいか分からないときは、まず0番をどうぞ。</p>
 
     <div class="prompt">
-      <div class="ph"><span>0　プロンプトを作るプロンプト（Gemini）</span><button class="copy" data-copy>コピー</button></div>
+      <div class="ph"><span>0　プロンプトを作るプロンプト（Gemini）</span><span class="tools"><button class="copy" data-copy>コピー</button><a class="open-ai" href="https://gemini.google.com" target="_blank" rel="noopener">Geminiを開く ↗</a></span></div>
       <pre>やりたいこと：【学級開きで使うスライドを作りたい】
 
 これを、AIへの頼みごとの文（プロンプト）にしてください。
@@ -349,7 +378,7 @@
     </div>
 
     <div class="prompt">
-      <div class="ph"><span>A　学級開きスライドの構成（Gemini）</span><button class="copy" data-copy>コピー</button></div>
+      <div class="ph"><span>A　学級開きスライドの構成（Gemini）</span><span class="tools"><button class="copy" data-copy>コピー</button><a class="open-ai" href="https://gemini.google.com" target="_blank" rel="noopener">Geminiを開く ↗</a></span></div>
       <pre>あなたは小学校の学級経営が得意な先生です。
 2学期の学級開きで使うスライドの構成を考えてください。
 
@@ -364,7 +393,7 @@
     </div>
 
     <div class="prompt">
-      <div class="ph"><span>B　導入の画像を生成（Gemini）</span><button class="copy" data-copy>コピー</button></div>
+      <div class="ph"><span>B　導入の画像を生成（Gemini）</span><span class="tools"><button class="copy" data-copy>コピー</button><a class="open-ai" href="https://gemini.google.com" target="_blank" rel="noopener">Geminiを開く ↗</a></span></div>
       <pre>画像を作ってください。
 
 場面：【朝の川原。増水した川が茶色くにごって流れている】
@@ -375,7 +404,7 @@
     </div>
 
     <div class="prompt">
-      <div class="ph"><span>B'　わざと突っ込みどころのある絵（Gemini）</span><button class="copy" data-copy>コピー</button></div>
+      <div class="ph"><span>B'　わざと突っ込みどころのある絵（Gemini）</span><span class="tools"><button class="copy" data-copy>コピー</button><a class="open-ai" href="https://gemini.google.com" target="_blank" rel="noopener">Geminiを開く ↗</a></span></div>
       <pre>画像を作ってください。
 
 場面：【体育館に開設された避難所。人が過ごしている】
@@ -388,7 +417,7 @@
     </div>
 
     <div class="prompt">
-      <div class="ph"><span>C　難しい資料をやさしく（Gemini Notebook／Gemini）</span><button class="copy" data-copy>コピー</button></div>
+      <div class="ph"><span>C　難しい資料をやさしく（Gemini Notebook／Gemini）</span><span class="tools"><button class="copy" data-copy>コピー</button><a class="open-ai" href="https://notebooklm.google.com" target="_blank" rel="noopener">Gemini Notebookを開く ↗</a></span></div>
       <pre>渡した資料を、【保護者】に伝わる言葉でまとめ直してください。
 
 条件：
@@ -398,7 +427,7 @@
     </div>
 
     <div class="prompt">
-      <div class="ph"><span>D　単元の見通しを聞く（Gemini Notebook）</span><button class="copy" data-copy>コピー</button></div>
+      <div class="ph"><span>D　単元の見通しを聞く（Gemini Notebook）</span><span class="tools"><button class="copy" data-copy>コピー</button><a class="open-ai" href="https://notebooklm.google.com" target="_blank" rel="noopener">Gemini Notebookを開く ↗</a></span></div>
       <pre>渡した年間指導計画と資料をもとに教えてください。
 
 ・【体育「バスケットボール型ゲーム」】の単元で、いちばん大事にすることは何ですか
@@ -566,6 +595,7 @@
     <nav class="site-map" aria-label="サイトマップ">
       <div class="sm-col">
         <div class="sm-h">このサイト</div>
+        <a href="slide/">投影スライド</a>
         <a href="#flow">見取り図</a>
         <a href="#tanomikata">頼み方3つ</a>
         <a href="#gazo">画像生成</a>
@@ -593,6 +623,7 @@
         <a href="https://line.me/ti/g2/FRICO2MfuNChAlRed3dlgW3X5YyFqyuhNR_nZw?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank" rel="noopener">GEG Chikuho（LINE）↗</a>
         <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a>
         <a href="https://a-tozak.github.io/School_Stock/" target="_blank" rel="noopener">School Stock ↗</a>
+        <a href="https://a-tozak.github.io/life-with/" target="_blank" rel="noopener">LiFE with コーポレートサイト ↗</a>
         <a href="mailto:EdtechChikuho@gmail.com">メール ↗</a>
       </div>
     </nav>
@@ -631,6 +662,29 @@ document.querySelectorAll('.copy').forEach(btn=>{
     });
   });
 });
+
+// QRワンタッチ表示
+const qrov=document.getElementById('qrov');
+document.getElementById('qrbtn').addEventListener('click',()=>qrov.classList.add('on'));
+qrov.addEventListener('click',()=>qrov.classList.remove('on'));
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') qrov.classList.remove('on'); });
+
+// ハンバーガーメニュー
+const mbtn=document.getElementById('menubtn'), mmenu=document.getElementById('mmenu');
+mbtn.addEventListener('click',()=>{
+  const on=!mmenu.classList.contains('on');
+  mmenu.classList.toggle('on',on); mbtn.classList.toggle('open',on);
+  mbtn.setAttribute('aria-expanded',on?'true':'false');
+});
+mmenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+  mmenu.classList.remove('on'); mbtn.classList.remove('open'); mbtn.setAttribute('aria-expanded','false');
+}));
+
+// トップに戻る
+const totop=document.getElementById('totop');
+totop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+const onTop=()=>totop.classList.toggle('show',window.scrollY>600);
+document.addEventListener('scroll',onTop,{passive:true}); onTop();
 </script>
 </body>
 </html>
