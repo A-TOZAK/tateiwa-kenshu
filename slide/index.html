@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>投影スライド｜立岩小 校内研修 8.24</title>
+<style>
+:root{
+  --ink:#15181c; --navy:#1c2a4a; --paper:#ffffff; --wash:#f6f6f4;
+  --line:#e6e6e3; --sub:#767b83; --accent:#2b5fd9; --moss:#33513f; --ng:#c05a2b;
+  --light:#9fb0d0;
+  --font-ja:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
+  --font-en:Georgia,"Times New Roman",serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{font-family:var(--font-ja); background:#000; color:var(--ink)}
+.slide{width:100vw; height:100vh; display:none; flex-direction:column; justify-content:center;
+  padding:6vh 7vw; background:var(--paper); position:relative; overflow:hidden}
+.slide.on{display:flex}
+.slide.navy{background:var(--navy); color:#fff}
+.kick{font-family:var(--font-en); letter-spacing:.2em; text-transform:uppercase;
+  font-size:1.6vh; color:var(--sub); margin-bottom:3vh}
+.navy .kick{color:var(--light)}
+h1{font-size:9vh; line-height:1.3; font-weight:800; letter-spacing:.01em}
+h2{font-size:6.5vh; line-height:1.35; font-weight:800}
+.hl{color:var(--accent)}
+.navy .hl{color:#8fb0f5}
+.sub-line{margin-top:4vh; font-size:2.8vh; color:var(--sub); font-weight:700}
+.navy .sub-line{color:var(--light)}
+.big-list{margin-top:5vh; display:flex; flex-direction:column; gap:2.6vh}
+.big-list .row{display:flex; align-items:center; gap:3vw; background:var(--wash); padding:2.6vh 3vw}
+.navy .big-list .row{background:rgba(255,255,255,.07)}
+.big-list .n{font-family:var(--font-en); font-weight:700; font-size:5vh; color:var(--accent); flex:none; width:6vh; text-align:center}
+.navy .big-list .n{color:#8fb0f5}
+.big-list .t{font-size:4vh; font-weight:800}
+.big-list .s{font-size:2.2vh; color:var(--sub); font-weight:400; margin-top:.4vh}
+.navy .big-list .s{color:var(--light)}
+.center{align-items:center; text-align:center}
+.foot{position:absolute; bottom:2.4vh; right:3vw; font-family:var(--font-en);
+  font-size:1.5vh; color:var(--sub); letter-spacing:.12em}
+.navy .foot{color:var(--light)}
+.cols{display:flex; gap:4vw; margin-top:5vh; align-items:stretch}
+.cols .col{flex:1; border:1px solid var(--line); padding:3vh 2vw}
+.navy .cols .col{border-color:rgba(255,255,255,.25)}
+.cols h3{font-size:3.4vh; font-weight:800; margin-bottom:1.4vh}
+.cols p{font-size:2.4vh; line-height:1.7}
+.qr-row{display:flex; align-items:center; gap:4vw; margin-top:5vh}
+.qr-row img{height:34vh; background:#fff; padding:1.6vh}
+.url{font-family:Menlo,monospace; font-size:3.2vh; background:var(--accent); color:#fff;
+  display:inline-block; padding:1.4vh 2.4vw; margin-top:2.4vh}
+.ratio-row{display:flex; align-items:flex-end; gap:5vw; margin-top:6vh; justify-content:center}
+.ratio-row .r{text-align:center}
+.ratio-row .box{border:.5vh solid var(--accent); background:#eef2fd; display:flex;
+  align-items:center; justify-content:center; font-family:var(--font-en); font-weight:700; font-size:3.6vh; color:var(--accent)}
+.ratio-row .r:nth-child(2) .box{border-color:var(--moss); background:#f4f7f2; color:var(--moss)}
+.ratio-row .r:nth-child(3) .box{border-color:var(--ng); background:#fdf6ee; color:var(--ng)}
+.ratio-row .cap{margin-top:1.6vh; font-size:2.6vh; font-weight:800}
+.ratio-row .cap small{display:block; font-size:1.8vh; color:var(--sub); font-weight:400}
+.page{position:absolute; bottom:2.4vh; left:3vw; font-family:var(--font-en); font-size:1.5vh; color:var(--sub)}
+.hint{position:fixed; bottom:1.2vh; left:50%; transform:translateX(-50%);
+  font-size:1.4vh; color:#888; z-index:9; opacity:.7}
+blockquote{font-size:6vh; font-weight:800; line-height:1.5}
+.by{margin-top:4vh; font-size:2.2vh; color:var(--light)}
+</style>
+</head>
+<body>
+
+<!-- 1 表紙 -->
+<section class="slide navy on">
+  <div class="kick">Tateiwa ES ・ Teacher Training ・ 2026.8.24</div>
+  <h1>AIには、<br><span class="hl">人に頼むように</span>。</h1>
+  <div class="sub-line">立岩小学校 校内研修 ／ 外﨑顯博（GEG Chikuho）</div>
+  <div class="foot">LiFE with</div>
+</section>
+
+<!-- 2 やること2つ -->
+<section class="slide">
+  <div class="kick">Today</div>
+  <h2>今日やることは、2つだけ。</h2>
+  <div class="big-list">
+    <div class="row"><div class="n">1</div><div><div class="t">実践例を見る</div><div class="s">画像生成で単元の導入 ／ NotebookLMで体育の準備</div></div></div>
+    <div class="row"><div class="n">2</div><div><div class="t">触る</div><div class="s">3つの題材から1つ選んで、自分の教室のために作る</div></div></div>
+  </div>
+</section>
+
+<!-- 3 ゴール4つ -->
+<section class="slide">
+  <div class="kick">Goals</div>
+  <h2>帰るときの姿、4つ。</h2>
+  <div class="big-list">
+    <div class="row"><div class="n">1</div><div class="t" style="font-size:3.4vh">画像生成を、自分の手で経験している</div></div>
+    <div class="row"><div class="n">2</div><div class="t" style="font-size:3.4vh">NotebookLMで、難しい資料をやさしくまとめられる</div></div>
+    <div class="row"><div class="n">3</div><div class="t" style="font-size:3.4vh">スライドの見た目のルールが、ちょっと分かる</div></div>
+    <div class="row"><div class="n">4</div><div class="t" style="font-size:3.4vh">学級開きで「こんなことしよう」が1つ浮かんでいる</div></div>
+  </div>
+</section>
+
+<!-- 4 実践例① -->
+<section class="slide navy center">
+  <div class="kick">Demo 1 ・ Image generation</div>
+  <h1>AIはまだ、<br>絵が下手です。</h1>
+  <div class="sub-line">だからこそ、教材になります。</div>
+</section>
+
+<!-- 5 避難所 -->
+<section class="slide">
+  <div class="kick">Demo 1 ・ 4年社会「水害からくらしを守る」</div>
+  <h2>この避難所の絵、<br>へんなところは ない？</h2>
+  <div class="big-list">
+    <div class="row"><div class="n">→</div><div><div class="t" style="font-size:3.2vh">おかしいところを見つけた数だけ、調べたいことが生まれる</div></div></div>
+    <div class="row"><div class="n">→</div><div><div class="t" style="font-size:3.2vh">「10点満点なら何点？　満点の避難所を考えよう」</div><div class="s">そのままパフォーマンス課題になります</div></div></div>
+  </div>
+  <div class="sub-line">※ここで実際に生成して見せます</div>
+</section>
+
+<!-- 6 実践例② -->
+<section class="slide navy center">
+  <div class="kick">Demo 2 ・ NotebookLM</div>
+  <h1>渡した資料の中だけから、<br>答えるAI。</h1>
+  <div class="sub-line">体育：年間指導計画＋文科省資料 → 単元の見通し・チーム分け・ルール説明スライド</div>
+</section>
+
+<!-- 7 頼み方3つ -->
+<section class="slide">
+  <div class="kick">How to ask</div>
+  <h2>頼み方は、3つだけ。</h2>
+  <div class="big-list">
+    <div class="row"><div class="n">1</div><div><div class="t">ほしいものを、言葉にする</div></div></div>
+    <div class="row"><div class="n">2</div><div><div class="t">前提とイメージを、渡す</div><div class="s">年間指導計画・PDF・参考にしたい画像</div></div></div>
+    <div class="row"><div class="n">3</div><div><div class="t">返ってきたものに、言葉を返す</div><div class="s">いいなら「ここがいい」、違うなら「ここが違う」</div></div></div>
+  </div>
+</section>
+
+<!-- 8 しゃべってOK -->
+<section class="slide navy center">
+  <h1>打たなくて、いい。<br><span class="hl">しゃべれば、いい。</span></h1>
+  <div class="sub-line">「えー」「あー」が混じっても、ちゃんと通じます</div>
+</section>
+
+<!-- 9 アスペクト比 -->
+<section class="slide">
+  <div class="kick">Size first</div>
+  <h2>大きさは、先に決める。</h2>
+  <div class="ratio-row">
+    <div class="r"><div class="box" style="width:32vw;height:18vw">16:9</div><div class="cap">スライドに<small>画面いっぱいにぴったり</small></div></div>
+    <div class="r"><div class="box" style="width:24vw;height:18vw">4:3</div><div class="cap">A4の印刷に<small>横長のA4にほぼ収まる</small></div></div>
+    <div class="r"><div class="box" style="width:18vw;height:18vw">1:1</div><div class="cap">アイコン・挿絵に<small>プリントの隅に</small></div></div>
+  </div>
+</section>
+
+<!-- 10 どっちが多い？ -->
+<section class="slide">
+  <div class="kick">One question</div>
+  <h2>正直、学校でよく見るのは<br>どっちのスライド？</h2>
+  <div class="cols">
+    <div class="col"><h3 style="color:var(--ng)">やくそくが8つ、1枚に全部</h3><p>一度に8つ見せると、子どもはどれも自分ごとにできない。</p></div>
+    <div class="col"><h3 style="color:var(--moss)">1枚に1つ、3枚に分ける</h3><p>減らす・大きくする・そろえる。直しに使う動詞は3つだけ。</p></div>
+  </div>
+  <div class="sub-line">※サイトで実物を見くらべます</div>
+</section>
+
+<!-- 11 触る時間 -->
+<section class="slide">
+  <div class="kick">Hands-on ・ 25 min</div>
+  <h2>触る時間。3つから1つ、選んでください。</h2>
+  <div class="big-list">
+    <div class="row"><div class="n">A</div><div><div class="t" style="font-size:3.4vh">学級開きのスライド</div><div class="s">大切にしたいことを1本に。見本pptxをサイトに置いています</div></div></div>
+    <div class="row"><div class="n">B</div><div><div class="t" style="font-size:3.4vh">授業の導入スライド</div><div class="s">画像を16:9で生成して、画像1枚＋問い1つ</div></div></div>
+    <div class="row"><div class="n">C</div><div><div class="t" style="font-size:3.4vh">解説系：難しい資料をやさしく</div><div class="s">手元の資料をNotebookLMに渡して、相手に届く言葉に</div></div></div>
+  </div>
+  <div class="sub-line">プロンプトはサイトの「プロンプト帳」からコピー（しゃべってもOK）</div>
+</section>
+
+<!-- 12 QR -->
+<section class="slide navy">
+  <div class="kick">Open this</div>
+  <h2 style="color:#fff">サイトは、このQRから。</h2>
+  <div class="qr-row">
+    <img src="../qr/tateiwa_qr.png" alt="研修サイトのQRコード">
+    <div>
+      <p style="font-size:2.8vh; color:var(--light)">プロンプト帳・見本のダウンロード・資料庫、ぜんぶここにあります。</p>
+      <div class="url">a-tozak.github.io/tateiwa-kenshu</div>
+    </div>
+  </div>
+</section>
+
+<!-- 13 見せ合い -->
+<section class="slide center">
+  <div class="kick">Share ・ 30 sec each</div>
+  <h2>となりの先生に、30秒だけ。</h2>
+  <h1 style="margin-top:4vh; font-size:6.5vh">「これで、子どもは<br>何を考えると思う？」</h1>
+</section>
+
+<!-- 14 まとめ -->
+<section class="slide navy center">
+  <blockquote>ほしいものを言葉にできたとき、<br>AIはいちばん働く。</blockquote>
+  <div class="by">外﨑 顯博 ／ LiFE with ・ 質問は公式LINEへ（サイトの下にあります）</div>
+</section>
+
+<div class="hint">← → キーでページ送り／F11で全画面</div>
+
+<script>
+const slides=[...document.querySelectorAll('.slide')];
+let i=0;
+const show=n=>{
+  i=Math.max(0,Math.min(slides.length-1,n));
+  slides.forEach((s,k)=>s.classList.toggle('on',k===i));
+};
+document.addEventListener('keydown',e=>{
+  if(['ArrowRight','ArrowDown',' ','PageDown'].includes(e.key)) {show(i+1); e.preventDefault();}
+  if(['ArrowLeft','ArrowUp','PageUp'].includes(e.key)) {show(i-1); e.preventDefault();}
+  if(e.key==='Home') show(0);
+  if(e.key==='End') show(slides.length-1);
+});
+document.addEventListener('click',e=>{ if(!e.target.closest('a')) show(i+1); });
+show(0);
+</script>
+</body>
+</html>

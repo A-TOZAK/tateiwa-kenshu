@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>配布資料｜立岩小学校 校内研修 2026.8.24</title>
+<style>
+/* 立岩小 8/24 研修 配布資料（A4縦・10p・カラー・書き込み型）
+   トーン＝研修サイトと同じ（白・墨・青#2b5fd9・苔#33513f・Georgiaキッカー） */
+:root{
+  --ink:#15181c; --black:#0e0f11; --paper:#ffffff; --wash:#f6f6f4;
+  --line:#e6e6e3; --sub:#767b83; --accent:#2b5fd9; --moss:#33513f; --ng:#c05a2b;
+  --font-ja:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
+  --font-en:Georgia,"Times New Roman",serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+@page{ size:A4 portrait; margin:0 }
+html,body{ background:#e9ecef }
+body{ font-family:var(--font-ja); color:var(--ink); font-size:10.3pt; line-height:1.9;
+  letter-spacing:.015em; -webkit-print-color-adjust:exact; print-color-adjust:exact }
+img{display:block; max-width:100%}
+.page{ width:210mm; height:297mm; background:var(--paper); position:relative; overflow:hidden;
+  padding:16mm 16mm 18mm; margin:0 auto 8mm; page-break-after:always; break-after:page }
+.page:last-child{ page-break-after:auto; margin-bottom:0 }
+@media print{ html,body{background:#fff} .page{margin:0} }
+
+.kicker{ font-family:var(--font-en); font-size:8.5pt; letter-spacing:.22em; text-transform:uppercase;
+  color:var(--moss); font-weight:700; margin-bottom:4mm; display:flex; align-items:center; gap:3mm }
+.kicker::before{ content:""; width:6mm; height:2px; background:var(--moss) }
+h2{ font-size:17pt; line-height:1.5; color:var(--black); font-weight:800; margin-bottom:4mm }
+h3{ font-size:11.5pt; color:var(--black); font-weight:800; margin-bottom:1.5mm }
+.lead{ font-size:10.3pt; margin-bottom:5mm }
+strong{ color:var(--black) }
+.note{ font-size:8.2pt; color:var(--sub); line-height:1.7 }
+.foot{ position:absolute; left:16mm; right:16mm; bottom:8mm; display:flex; justify-content:space-between;
+  font-size:7.5pt; color:var(--sub); letter-spacing:.06em; border-top:1px solid var(--line); padding-top:2mm }
+.foot .pno{ font-family:var(--font-en) }
+
+.card{ background:var(--wash); padding:4mm 5mm }
+.card.white{ background:#fff; border:1px solid var(--line) }
+.grid2{ display:grid; grid-template-columns:1fr 1fr; gap:5mm }
+
+/* 番号つき行 */
+.mn{ display:grid; grid-template-columns:8mm 1fr; gap:3.5mm; padding:2.4mm 0; align-items:start }
+.mn+.mn{ border-top:1px dotted var(--line) }
+.mn .no{ font-family:var(--font-en); font-weight:700; font-size:11pt; color:var(--accent);
+  border:1.5px solid var(--accent); border-radius:50%; width:7mm; height:7mm;
+  display:flex; align-items:center; justify-content:center; margin-top:1mm }
+.mn .ttl{ font-weight:800; font-size:10.8pt; color:var(--black); line-height:1.6 }
+.mn p{ font-size:9.2pt; line-height:1.75 }
+
+/* 書き込み欄 */
+.write{ border:1.5px solid var(--line); background:#fff; padding:3.5mm 4mm; position:relative }
+.write .wl{ font-size:8pt; font-weight:700; color:var(--accent); margin-bottom:1mm }
+.write .lines{ display:block }
+.write .lines i{ display:block; height:8.4mm; border-bottom:1px dotted #c9cdd3 }
+.pencil{ font-size:8pt; color:var(--sub) }
+
+/* 表紙 */
+.cover{ padding:0 }
+.cover .art{ position:absolute; top:0; left:0; width:210mm; height:297mm; object-fit:cover; object-position:top }
+.cover .to{ position:absolute; top:14mm; right:14mm; background:rgba(255,255,255,.94);
+  padding:5mm 7mm; border-top:3px solid var(--accent); text-align:left }
+.cover .to .d{ font-size:9.5pt; color:var(--sub); letter-spacing:.08em }
+.cover .to .n{ font-size:15pt; font-weight:800; color:var(--black); letter-spacing:.05em; margin-top:1mm }
+.cover .body{ position:absolute; left:18mm; right:18mm; top:196mm }
+.cover .cap{ font-family:var(--font-en); font-size:9pt; letter-spacing:.24em; text-transform:uppercase;
+  color:var(--moss); font-weight:700; margin-bottom:5mm }
+.cover h1{ font-size:27pt; line-height:1.55; font-weight:800; color:var(--black); letter-spacing:.02em }
+.cover h1 .hl{ color:var(--accent) }
+.cover .sub{ margin-top:5mm; font-size:10.5pt; line-height:2.0; max-width:150mm }
+.cover .issuer{ position:absolute; left:18mm; right:18mm; bottom:14mm; display:flex;
+  justify-content:space-between; align-items:flex-end; border-top:1px solid var(--line); padding-top:3.5mm }
+.cover .issuer .who{ font-size:9pt; line-height:1.8 }
+.cover .issuer .who b{ font-size:11pt; color:var(--black) }
+.cover .issuer .lw{ font-family:var(--font-en); font-style:italic; color:var(--moss); font-size:10pt }
+
+/* 進行表 */
+.timeline{ margin-top:4mm }
+.tl{ display:grid; grid-template-columns:22mm 8mm 1fr; gap:3mm; padding:2.2mm 0; align-items:baseline }
+.tl+.tl{ border-top:1px dotted var(--line) }
+.tl .t{ font-family:var(--font-en); font-size:9pt; color:var(--sub); font-weight:700 }
+.tl .n{ font-family:var(--font-en); font-size:11pt; color:var(--accent); font-weight:700 }
+.tl .b .h{ font-weight:800; font-size:10.5pt; color:var(--black) }
+.tl .b .s{ font-size:8.8pt; color:var(--sub) }
+
+/* プロンプト（紙版） */
+.pr{ border:1px solid var(--line); background:#fbfbfa; margin-bottom:3.5mm }
+.pr .ph{ padding:1.8mm 3.5mm; border-bottom:1px solid var(--line); font-size:8.6pt; font-weight:800; color:var(--moss) }
+.pr pre{ font-family:var(--font-ja); font-size:8.4pt; line-height:1.7; padding:2.5mm 3.5mm;
+  white-space:pre-wrap; word-break:break-word; color:var(--ink) }
+
+/* QRカード */
+.qrgrid{ display:grid; grid-template-columns:repeat(3,1fr); gap:4mm }
+.qr{ border:1px solid var(--line); padding:3.5mm; text-align:center }
+.qr img{ width:26mm; height:26mm; margin:0 auto 1.5mm }
+.qr .t{ font-weight:800; font-size:9pt; color:var(--black); line-height:1.5 }
+.qr .s{ font-size:7.6pt; color:var(--sub); line-height:1.6; margin-top:.8mm }
+.qr .u{ font-size:6.6pt; color:#9aa2ab; margin-top:1mm; word-break:break-all; letter-spacing:0 }
+
+/* 図版枠 */
+.fig{ border:1px solid var(--line); padding:3mm; background:#fff }
+.fig img{ width:100% }
+.fig .cap{ font-size:8pt; color:var(--sub); margin-top:1.5mm; text-align:center }
+.tip{ margin-top:3.5mm; padding:2.5mm 4mm; background:var(--wash); border-left:3px solid var(--moss); font-size:9pt }
+.tip b{ color:var(--moss) }
+ul.uses{ list-style:none; margin-top:1mm }
+ul.uses li{ padding:1.6mm 0 1.6mm 6mm; position:relative; font-size:9.4pt; border-bottom:1px solid var(--line) }
+ul.uses li:last-child{ border-bottom:none }
+ul.uses li::before{ content:"→"; position:absolute; left:0; color:var(--accent); font-weight:700 }
+</style>
+</head>
+<body>
+
+<!-- ===== p1 表紙 ===== -->
+<div class="page cover">
+  <img class="art" src="img/hyoshi_madobe_natsu.png" alt="">
+  <div class="to">
+    <div class="d">2026年8月24日（月）校内研修</div>
+    <div class="n">立岩小学校の先生方へ</div>
+  </div>
+  <div class="body">
+    <div class="cap">Gemini &amp; NotebookLM ・ Hands-on</div>
+    <h1>AIには、<span class="hl">人に頼むように</span>。</h1>
+    <p class="sub">実践例を見て、あとはたっぷり触る60分。この資料は、聞きながら書き込んで、2学期の教室にそのまま持っていける形にしてあります。</p>
+  </div>
+  <div class="issuer">
+    <div class="who"><b>外﨑 顯博</b>（とざき あきひろ）<br>飯塚市立菰田小学校 ・ GEG Chikuho 共同リーダー</div>
+    <div class="lw">LiFE with</div>
+  </div>
+</div>
+
+<!-- ===== p2 今日の地図 ===== -->
+<div class="page">
+  <div class="kicker">Map</div>
+  <h2>今日の地図。やることは2つだけ。</h2>
+  <div class="grid2">
+    <div class="card">
+      <h3>① 実践例を見る</h3>
+      <p style="font-size:9.4pt">画像生成で単元の導入をつくる例と、NotebookLMで体育の準備をする例。どちらも、ふだんの授業準備の話です。</p>
+    </div>
+    <div class="card">
+      <h3>② 触る</h3>
+      <p style="font-size:9.4pt">3つの題材（学級開き・授業の導入・解説系）から1つ選んで、自分の教室のために作ります。</p>
+    </div>
+  </div>
+
+  <div class="kicker" style="margin-top:8mm">60 minutes</div>
+  <div class="timeline">
+    <div class="tl"><div class="t">0–5</div><div class="n">1</div><div class="b"><span class="h">今日のゴール</span>　<span class="s">下の4つを確認</span></div></div>
+    <div class="tl"><div class="t">5–20</div><div class="n">2</div><div class="b"><span class="h">実践例を2本</span>　<span class="s">画像生成 ／ NotebookLM</span></div></div>
+    <div class="tl"><div class="t">20–25</div><div class="n">3</div><div class="b"><span class="h">頼み方のコツ</span>　<span class="s">言葉にする・渡す・言葉を返す（→p.5）</span></div></div>
+    <div class="tl"><div class="t">25–50</div><div class="n">4</div><div class="b"><span class="h">触る時間</span>　<span class="s">3つから1つ。プロンプトはサイトからコピー</span></div></div>
+    <div class="tl"><div class="t">50–60</div><div class="n">5</div><div class="b"><span class="h">見せ合い・まとめ</span>　<span class="s">「これで、子どもは何を考えると思う？」</span></div></div>
+  </div>
+
+  <div class="grid2" style="margin-top:8mm">
+    <div>
+      <h3>帰るときの姿、4つ</h3>
+      <ul class="uses">
+        <li>画像生成を、自分の手で経験している</li>
+        <li>NotebookLMで、資料をやさしくまとめられる</li>
+        <li>スライドの見た目のルールが、ちょっと分かる</li>
+        <li>学級開きで「こんなことしよう」が1つ浮かんでいる</li>
+      </ul>
+    </div>
+    <div class="write">
+      <div class="wl">✎ 今日、いちばん持ち帰りたいもの</div>
+      <p class="pencil">（始まる前の気持ちでOK。終わったら見返してみてください）</p>
+      <span class="lines"><i></i><i></i><i></i></span>
+    </div>
+  </div>
+  <div class="foot"><span>立岩小学校 校内研修 2026.8.24 ・ LiFE with</span><span class="pno">2 / 10</span></div>
+</div>
+
+<!-- ===== p3 実践事例① ===== -->
+<div class="page">
+  <div class="kicker">Case 1 ・ Image generation</div>
+  <h2>AIはまだ絵が下手。だから、授業になる。</h2>
+  <p class="lead">4年社会「水害からくらしを守る」の導入で、避難所のイラストをAIに描かせました。頼んだ言葉と、返ってきた絵を、そのまま載せます。</p>
+
+  <div class="pr">
+    <div class="ph">頼んだ言葉（プロンプト原文）</div>
+    <pre>画像を作ってください。
+場面：体育館に開設された避難所。人が過ごしている
+ねらい：4年生が「おかしいところ」を見つける教材にしたいので、
+通路がない・水や毛布が見当たらない・間仕切りがない など、
+設備の足りないようすをわざと入れてください。
+画風：やさしいイラスト　比率：16:9　文字は入れないでください。</pre>
+  </div>
+
+  <div class="fig" style="max-width:126mm; margin:0 auto">
+    <img src="img/hinanjo_demo.png" alt="設備の足りない避難所のイラスト">
+    <div class="cap">返ってきた絵。ぱっと見はきれい。でも、よく見ると……</div>
+  </div>
+
+  <div class="grid2" style="margin-top:4mm">
+    <div class="card">
+      <h3>教室での出し方</h3>
+      <p style="font-size:9.2pt">この絵を16:9でどんと映して、ひとこと。<br><strong>「この絵、へんなところはない？」</strong><br>気づいた数だけ、単元で調べたいことが生まれます。「10点満点なら何点？」まで進めば、単元の終わりの課題になります。</p>
+    </div>
+    <div class="write">
+      <div class="wl">✎ 自分の教科・単元でやるなら</div>
+      <p class="pencil">（わざと「おかしい絵」が効きそうな場面は？）</p>
+      <span class="lines"><i></i><i></i><i></i></span>
+    </div>
+  </div>
+  <div class="foot"><span>立岩小学校 校内研修 2026.8.24 ・ LiFE with</span><span class="pno">3 / 10</span></div>
+</div>
+
+<!-- ===== p4 実践事例② ===== -->
+<div class="page">
+  <div class="kicker">Case 2 ・ NotebookLM</div>
+  <h2>NotebookLM。渡した資料の中だけから、答えるAI。</h2>
+  <p class="lead">ネット全体から適当に答えないのが良さです。学校の資料を渡せば、学校の言葉で返ってきます。体育「バスケットボール型ゲーム」の準備を例に。</p>
+
+  <div class="mn"><div class="no">1</div><div><div class="ttl">年間指導計画と文科省の体育資料を渡す</div><p>PDFやドキュメントをそのまま入れるだけです。</p></div></div>
+  <div class="mn"><div class="no">2</div><div><div class="ttl">聞く：「この単元のポイントは？」</div><p>子どもに持たせたい見通しも、続けて聞けます。</p></div></div>
+  <div class="mn"><div class="no">3</div><div><div class="ttl">聞く：「うちの学級の人数なら、何人対何人？」</div><p>チーム分けの案が、理由つきで返ってきます。</p></div></div>
+  <div class="mn"><div class="no">4</div><div><div class="ttl">頼む：「4年生に伝わる言葉でルール説明スライドを」</div><p>下書きがスライドの形になって出てきます。</p></div></div>
+  <div class="mn"><div class="no">5</div><div><div class="ttl">PowerPoint形式で受け取り、Googleスライドで仕上げる</div><p>言い方を教室の言葉に直すのは、先生の仕事です。</p></div></div>
+
+  <div class="tip"><b>分担はいつもこれ：</b>下書きはAI、仕上げの判断は先生。単元の見通しも、ルールの言い方も、最後に決めるのは教室を知っている人です。</div>
+
+  <div class="write" style="margin-top:5mm">
+    <div class="wl">✎ 自分なら、何を渡して、何を聞く？</div>
+    <p class="pencil">（例：年間指導計画＋指導書の単元ページ／「単元テストまでに押さえることは？」）</p>
+    <span class="lines"><i></i><i></i><i></i></span>
+  </div>
+  <div class="foot"><span>立岩小学校 校内研修 2026.8.24 ・ LiFE with</span><span class="pno">4 / 10</span></div>
+</div>
+
+<!-- ===== p5 頼み方 ===== -->
+<div class="page">
+  <div class="kicker">How to ask</div>
+  <h2>頼み方は、3つだけ。</h2>
+  <p class="lead">AIに頼むのは、職員室で人に仕事を頼むのと似ています。前提を渡さなければ違うものが出てくるし、仕上がりのイメージを見せた頼み方は、結果がまるで違います。</p>
+
+  <div class="mn"><div class="no">1</div><div><div class="ttl">ほしいものを、言葉にする</div><p>「何かいい感じに」では、人にもAIにも伝わりません。誰のため・どの場面で・何をしてほしいか。まず自分が言葉にします。</p></div></div>
+  <div class="mn"><div class="no">2</div><div><div class="ttl">前提とイメージを、渡す</div><p>年間指導計画のPDF、学習指導要領、参考にしたい画像。手元の材料を渡すほど、返ってくるものは教室に近づきます。</p></div></div>
+  <div class="mn"><div class="no">3</div><div><div class="ttl">返ってきたものに、言葉を返す</div><p>いいなら「ここがいい」、違うなら「ここが違う」。一発で当てようとせず、言葉のキャッチボールで寄せていきます。</p></div></div>
+
+  <div class="tip"><b>打たなくていいです：</b>頼みごとはマイクに向かってしゃべれば十分。「えー」「あー」が混じっても、言い直しても、ちゃんと通じます。タイピングの速さは、AIの上手さと関係ありません。</div>
+
+  <div class="write" style="margin-top:5mm">
+    <div class="wl">✎ メモ</div>
+    <span class="lines"><i></i><i></i><i></i><i></i></span>
+  </div>
+  <div class="foot"><span>立岩小学校 校内研修 2026.8.24 ・ LiFE with</span><span class="pno">5 / 10</span></div>
+</div>
+
+<!-- ===== p6 画像生成の基礎 ===== -->
+<div class="page">
+  <div class="kicker">Image basics</div>
+  <h2>画像生成の基礎。大きさは、先に決める。</h2>
+  <p class="lead">いちばん簡単なのに効くのが、縦横の比率を先に伝えることです。使い先が決まれば、比率も決まります。</p>
+
+  <div class="fig">
+    <svg viewBox="0 0 900 260" xmlns="http://www.w3.org/2000/svg" style="width:100%">
+      <g>
+        <rect x="30" y="30" width="288" height="162" fill="#eef2fd" stroke="#2b5fd9" stroke-width="2.5"/>
+        <text x="174" y="122" font-size="30" fill="#2b5fd9" text-anchor="middle" font-family="Georgia" font-weight="bold">16:9</text>
+        <text x="174" y="222" font-size="18" fill="#15181c" text-anchor="middle" font-weight="bold">スライドに</text>
+        <text x="174" y="246" font-size="12" fill="#767b83" text-anchor="middle">画面いっぱいにぴったり</text>
+      </g>
+      <g>
+        <rect x="392" y="14" width="238" height="178" fill="#f4f7f2" stroke="#33513f" stroke-width="2.5"/>
+        <text x="511" y="114" font-size="30" fill="#33513f" text-anchor="middle" font-family="Georgia" font-weight="bold">4:3</text>
+        <text x="511" y="222" font-size="18" fill="#15181c" text-anchor="middle" font-weight="bold">A4の印刷に</text>
+        <text x="511" y="246" font-size="12" fill="#767b83" text-anchor="middle">横長のA4にほぼ収まる</text>
+      </g>
+      <g>
+        <rect x="702" y="14" width="178" height="178" fill="#fdf6ee" stroke="#c05a2b" stroke-width="2.5"/>
+        <text x="791" y="114" font-size="30" fill="#c05a2b" text-anchor="middle" font-family="Georgia" font-weight="bold">1:1</text>
+        <text x="791" y="222" font-size="18" fill="#15181c" text-anchor="middle" font-weight="bold">アイコン・挿絵に</text>
+        <text x="791" y="246" font-size="12" fill="#767b83" text-anchor="middle">プリントの隅にちょこんと</text>
+      </g>
+    </svg>
+  </div>
+
+  <div class="grid2" style="margin-top:5mm">
+    <div>
+      <h3>画像を頼むときの型（5つ）</h3>
+      <ul class="uses">
+        <li><strong>場面</strong>：どこで・だれが・何をしている絵か</li>
+        <li><strong>画風</strong>：水彩・写真ふう・やさしいイラスト</li>
+        <li><strong>使い先</strong>：スライドの背景・プリントの挿絵</li>
+        <li><strong>比率</strong>：16:9／4:3／1:1</li>
+        <li><strong>文字は入れない</strong>：文字はスライド側で乗せる</li>
+      </ul>
+    </div>
+    <div class="write">
+      <div class="wl">✎ 頼んでみたい絵を、型で言葉にしてみる</div>
+      <p class="pencil">場面：</p>
+      <span class="lines"><i></i></span>
+      <p class="pencil" style="margin-top:2mm">画風・使い先・比率：</p>
+      <span class="lines"><i></i><i></i></span>
+    </div>
+  </div>
+  <div class="foot"><span>立岩小学校 校内研修 2026.8.24 ・ LiFE with</span><span class="pno">6 / 10</span></div>
+</div>
+
+<!-- ===== p7 学級開き設計シート ===== -->
+<div class="page">
+  <div class="kicker">Worksheet</div>
+  <h2>学級開きスライド、設計シート。</h2>
+  <p class="lead">2学期の学級開きで、子どもたちに大切にしてほしいこと。スライドを開く前に、ここに鉛筆で書くほうが速いです。見本のpptxはサイトに置いています。</p>
+
+  <div class="write">
+    <div class="wl">✎ 2学期、いちばん伝えたいこと（1つだけ）</div>
+    <span class="lines"><i></i><i></i></span>
+  </div>
+
+  <div class="grid2" style="margin-top:4mm; grid-template-columns:1fr 1fr 1fr; display:grid; gap:3mm">
+    <div class="write"><div class="wl">1まい目：表紙</div><span class="lines"><i></i><i></i></span></div>
+    <div class="write"><div class="wl">2まい目：おかえり</div><span class="lines"><i></i><i></i></span></div>
+    <div class="write"><div class="wl">3まい目：ため</div><span class="lines"><i></i><i></i></span></div>
+    <div class="write"><div class="wl">4まい目：伝えたいこと</div><span class="lines"><i></i><i></i></span></div>
+    <div class="write"><div class="wl">5まい目：なぜか</div><span class="lines"><i></i><i></i></span></div>
+    <div class="write"><div class="wl">6まい目：問いかけ</div><span class="lines"><i></i><i></i></span></div>
+  </div>
+
+  <div class="grid2" style="margin-top:4mm">
+    <div class="write">
+      <div class="wl">✎ 入れる画像のイメージ（AIに頼む言葉で）</div>
+      <span class="lines"><i></i><i></i><i></i></span>
+    </div>
+    <div class="write">
+      <div class="wl">✎ 出しながら、しゃべること</div>
+      <p class="pencil">（スライドに書かない分が、先生の言葉になります）</p>
+      <span class="lines"><i></i><i></i></span>
+    </div>
+  </div>
+  <div class="tip"><b>見本の構成：</b>表紙 → 夏の写真で「おかえりなさい」 → ため → 伝えたいこと1つ → なぜか1行 → 「あなたは？」の問いかけ → 締め。全部で7枚・10分が目安です。</div>
+  <div class="foot"><span>立岩小学校 校内研修 2026.8.24 ・ LiFE with</span><span class="pno">7 / 10</span></div>
+</div>
+
+<!-- ===== p8 プロンプト帳 ===== -->
+<div class="page">
+  <div class="kicker">Prompts</div>
+  <h2>プロンプト帳（紙版）。</h2>
+  <p class="lead" style="margin-bottom:3mm">【　】だけ自分の言葉に。コピーして使うときは、サイトの「プロンプト帳」からどうぞ（→右下QR）。全部しゃべって伝えても構いません。</p>
+
+  <div class="pr"><div class="ph">A　学級開きスライドの構成（Gemini）</div>
+  <pre>あなたは小学校の学級経営が得意な先生です。2学期の学級開きで使うスライドの構成を考えてください。
+伝えたいこと：【あいさつは自分から】／学年：【4年生】／時間：学活のはじめの【10分】
+条件：スライドは6枚まで・1枚に伝えることは1つ・子どもに問いかける枚を1枚・各スライドの「見出し」「入れる画像のイメージ」「先生がしゃべること」を分けて書く</pre></div>
+
+  <div class="pr"><div class="ph">B　導入の画像を生成（Gemini）</div>
+  <pre>画像を作ってください。場面：【朝の川原。増水した川が茶色くにごって流れている】／画風：【写真のようにリアルに】／使い先：授業のスライドの背景／比率：16:9／画像の中に文字は入れないでください。</pre></div>
+
+  <div class="pr"><div class="ph">B'　わざと突っ込みどころのある絵（Gemini）</div>
+  <pre>画像を作ってください。場面：【体育館に開設された避難所】。【4年生】が「おかしいところ」を見つける教材にしたいので、【通路がない・水や毛布が見当たらない】など設備の足りないようすをわざと入れてください。画風：やさしいイラスト／比率：16:9／文字は入れない。</pre></div>
+
+  <div class="pr"><div class="ph">C　難しい資料をやさしく（NotebookLM／Gemini）</div>
+  <pre>渡した資料を、【保護者】に伝わる言葉でまとめ直してください。条件：A4半分くらい・専門用語はふつうの言葉に言いかえる（言いかえられないものは（　）で短く説明）・「結局なにをすればいいか」を最後に3つの箇条書きで。</pre></div>
+
+  <div class="pr"><div class="ph">D　単元の見通しを聞く（NotebookLM）</div>
+  <pre>渡した年間指導計画と資料をもとに教えてください。【体育「バスケットボール型ゲーム」】でいちばん大事にすることは何ですか。【28】人の学級で試合をするなら何人対何人がよいですか（理由も）。第1時で子どもに持たせたい見通しを、子どもに話す言葉で書いてください。</pre></div>
+
+  <div style="position:absolute; right:16mm; bottom:16mm; text-align:center">
+    <img src="qr/site.png" alt="研修サイトQR" style="width:22mm; height:22mm; margin:0 auto 1mm">
+    <div class="note">コピーはこちらから</div>
+  </div>
+  <div class="foot"><span>立岩小学校 校内研修 2026.8.24 ・ LiFE with</span><span class="pno">8 / 10</span></div>
+</div>
+
+<!-- ===== p9 School Stock ===== -->
+<div class="page">
+  <div class="kicker">School Stock</div>
+  <h2>続きの学びは、School Stock に。</h2>
+  <p class="lead">外﨑が運営している、無料・登録不要の教材と実践の棚です。今日の研修に関係する棚をまとめました。どれも研修サイトからたどれます。</p>
+
+  <div class="qrgrid">
+    <div class="qr"><img src="qr/prompts_es.png" alt=""><div class="t">小学校 Geminiプロンプト集</div><div class="s">学年・教科・領域から選ぶ授業づくりのプロンプト</div></div>
+    <div class="qr"><img src="qr/schoolstock.png" alt=""><div class="t">School Stock 本体</div><div class="s">プリント・素材・実践アイデアの棚。ぜんぶ無料</div></div>
+    <div class="qr"><img src="qr/site.png" alt=""><div class="t">この研修のサイト</div><div class="s">今日の内容・プロンプト帳・見本・資料庫</div></div>
+  </div>
+
+  <h3 style="margin-top:7mm">サイトの資料庫にあるもの</h3>
+  <ul class="uses">
+    <li><strong>資料編「教師のスライドづくり」</strong>：見た目の大原則5つ・比較で分かるBefore/After・差し替えるだけのテンプレpptx4本</li>
+    <li><strong>学級開き見本pptx</strong>：今日の題材Aの見本。そのまま差し替えて使えます</li>
+    <li><strong>NotebookLMのくわしい手順</strong>：資料の渡し方からpptxで受け取るまで</li>
+    <li><strong>AIでつくった写真素材の棚</strong>：頼み方でどこまで変わるかの実例集</li>
+    <li><strong>間違い探しを、AIに作らせる</strong>：「わざとおかしい絵」の遊び版。朝の会の1本に</li>
+  </ul>
+
+  <div class="tip"><b>使うときの約束を1つだけ：</b>教科書の紙面や市販教材の画像は、AIに渡さないでください。自分で撮った写真・自分の資料・国や自治体の公開資料が安心です。</div>
+  <div class="foot"><span>立岩小学校 校内研修 2026.8.24 ・ LiFE with</span><span class="pno">9 / 10</span></div>
+</div>
+
+<!-- ===== p10 うら表紙 ===== -->
+<div class="page">
+  <div class="kicker">After</div>
+  <h2>研修のあとも、ひとりにしません。</h2>
+  <p class="lead">うまくいかなかったら、それはだいたい頼み方で直ります。ひとりで抱えず、聞いてください。</p>
+
+  <div class="qrgrid">
+    <div class="qr"><img src="qr/form.png" alt=""><div class="t">アンケート（2分）</div><div class="s">試さなかった、うまくいかなかった、どちらもそのままお書きください</div></div>
+    <div class="qr"><img src="qr/line.png" alt=""><div class="t">公式LINE</div><div class="s">研修後の質問はこちらへ。気づいたときに返します</div></div>
+    <div class="qr"><img src="qr/site.png" alt=""><div class="t">研修サイト</div><div class="s">a-tozak.github.io/tateiwa-kenshu</div></div>
+  </div>
+
+  <div class="card" style="margin-top:8mm">
+    <h3>2学期の、最初の一歩に</h3>
+    <p style="font-size:9.4pt">今日作りかけたものを、そのまま仕上げて1回使ってみてください。学級開きのスライドでも、導入の1枚でも、保護者向けの文書でも。1回使うと、2回目からは自分の道具になります。分からなくなったら、サイトのプロンプト帳に戻ってきてください。</p>
+  </div>
+
+  <div style="position:absolute; left:16mm; right:16mm; bottom:20mm">
+    <div style="text-align:center; font-size:13pt; font-weight:800; color:var(--black); line-height:1.8">ほしいものを言葉にできたとき、<br>AIはいちばん働く。</div>
+    <div style="text-align:center; font-size:8.5pt; color:var(--sub); margin-top:3mm">外﨑顯博 ／ LiFE with ・ EdtechChikuho@gmail.com<br>本資料の文章・図版・写真はすべて外﨑の自作です。 © 2026 外﨑顯博</div>
+  </div>
+  <div class="foot"><span>立岩小学校 校内研修 2026.8.24 ・ LiFE with</span><span class="pno">10 / 10</span></div>
+</div>
+
+</body>
+</html>
